@@ -11,12 +11,10 @@ Core Data SlapChat Relationships
 
   1. Create a new Entity in your Data Model called 'Recipient'
   2. Recipient should have the following properties 
-
   - name 
   - email
   - phoneNumber 
   - twitterHandle 
-
   3. In your data model, 'Recipient' should have a to many relationship with 'Messages' and Message should have a to-one relationship with Recipient.  In other words, a recipient can have many messages but a message can only have one recipient. 
 
   4. After the user selects an image, you should present a modal view controller that allows them to fill in a form of recipient data (name, email, phoneNumber, twitterHandle).  A relationship between the Message and the recipient should be created upon pressing a submit button on this viewController.  
