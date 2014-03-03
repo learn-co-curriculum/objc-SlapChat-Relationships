@@ -8,21 +8,25 @@ Core Data SlapChat Relationships
 
 # Instructions
 
-  1. Create a new **Empty Project** and select the Core Data stuff
-  2. Create a new Singleton Data Store class and copy over these three
-     segments:
-     * In FISAppDelegate.h: lines 15-20
-     * In FISAppDelegate.m: Lines 15-17 and 56-149
-  4. In your .xcdatamodeld make a new entity called Message. It should have two attributes: image and createdAt
-  5. Generate the NSManagedObject subclass
-  6. Make a new UITableViewController. In your basic cell, set the `textLabel.text` to the date of your `Message` objects.
-  7. Add a property to your UITableViewController of type `NSArray` that will be an NSArray of `Message` objects.
-  8. Add a plus button to a UINavigationController and link that to an `IBAction`.
-  9. When that `IBAction` gets tapped, present modally a new `UIImagePickerController`
-  10. After the user selects an image, Create a new `Message` object, add the current date and convert the `UIImage` to an `NSData` object by running `UIImagePNGRepresentation(image)`.
-  11. Save the context and refetch from the `NSManagedObjectContext` to show the added item.
 
-# Extra Credit
+  1. Create a new Entity in your Data Model called 'Recipient'
+  2. Recipient should have the following properties 
 
-  1. Create another `ViewController` that when you tap on the `UITableViewCell` it shows the image stored.
-  2. In that additional viewcontroller, create a `UIBarButtonItem` to change the image, and resave without changing the created at date.
+  - name 
+  - email
+  - phoneNumber 
+  - twitterHandle 
+
+  3. In your data model, 'Recipient' should have a to many relationship with 'Messages' and Message should have a to-one relationship with Recipient.  In other words, a recipient can have many messages but a message can only have one recipient. 
+
+  4. After the user selects an image, you should present a modal view controller that allows them to fill in a form of recipient data (name, email, phoneNumber, twitterHandle).  A relationship between the Message and the recipient should be created upon pressing a submit button on this viewController.  
+
+  5. Embed your View Controller Stack into a Tab Bar Controller.  In the second tab, create a tableViewController that displays a list of all Recipients. Selecting a Recipient should segue to another tableview that displays all of the Messages for that Recipient.   
+
+
+# Extra Credit 
+
+Add a search bar to the Recipient tableview controller that allows you to filter the list of recipients.  Research UISearchBar, UISearchBarDelegate, and NSPredicate to make this happen.   
+
+
+
