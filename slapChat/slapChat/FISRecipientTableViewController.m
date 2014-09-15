@@ -1,41 +1,31 @@
 //
-//  FISTableViewController.m
+//  FISRecipientTableViewController.m
 //  slapChat
 //
-//  Created by Joe Burgess on 6/27/14.
+//  Created by Chris Gonzales on 9/15/14.
 //  Copyright (c) 2014 Joe Burgess. All rights reserved.
 //
 
+#import "FISRecipientTableViewController.h"
+#import "FISDataStore.h"
+#import "Recipient.h"
 #import "FISTableViewController.h"
-#import "Message.h"
 
-@interface FISTableViewController ()
+@interface FISRecipientTableViewController ()
+
+@property (strong, nonatomic) FISDataStore *store;
 
 @end
 
-@implementation FISTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
+@implementation FISRecipientTableViewController
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
+    
+    self.store = [FISDataStore sharedDataStore];
+    [self.store fetchData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,32 +36,25 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.messages count];
+    return self.store.recipients.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basiccell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"rightDetailCell" forIndexPath:indexPath];
     
-    Message *eachMessage = self.messages[indexPath.row];
+    Recipient *currentRecipient = self.store.recipients[indexPath.row];
     
-    cell.textLabel.text = eachMessage.content;
+    cell.textLabel.text = currentRecipient.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%i", currentRecipient.messages.count];
     
     // Configure the cell...
     
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -111,15 +94,17 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+    Recipient *selectedRecipient = self.store.recipients[ip.row];
+    
+    FISTableViewController *nextVC = segue.destinationViewController;
+    nextVC.messages = [selectedRecipient.messages allObjects];
+    
 }
-*/
 
 @end

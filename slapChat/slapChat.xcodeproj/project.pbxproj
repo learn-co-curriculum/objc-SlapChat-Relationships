@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7238052119C76081004A931E /* FISRecipientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052019C76081004A931E /* FISRecipientTableViewController.m */; };
+		7238052419C7636D004A931E /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052319C7636D004A931E /* Message.m */; };
+		7238052719C7636D004A931E /* Recipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052619C7636D004A931E /* Recipient.m */; };
+		7238052A19C76478004A931E /* Message+ConvenienceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052919C76478004A931E /* Message+ConvenienceMethods.m */; };
 		D879F339195E028000FC5285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F338195E028000FC5285 /* Foundation.framework */; };
 		D879F33B195E028000FC5285 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33A195E028000FC5285 /* CoreGraphics.framework */; };
 		D879F33D195E028000FC5285 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33C195E028000FC5285 /* UIKit.framework */; };
@@ -24,7 +28,6 @@
 		D879F375195E02C000FC5285 /* slapChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D879F373195E02C000FC5285 /* slapChat.xcdatamodeld */; };
 		D879F377195E030C00FC5285 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F376195E030C00FC5285 /* CoreData.framework */; };
 		D879F37A195E032D00FC5285 /* FISTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D879F379195E032D00FC5285 /* FISTableViewController.m */; };
-		D879F3A91961F1E800FC5285 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D879F3A81961F1E800FC5285 /* Message.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7238051F19C76081004A931E /* FISRecipientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISRecipientTableViewController.h; sourceTree = "<group>"; };
+		7238052019C76081004A931E /* FISRecipientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISRecipientTableViewController.m; sourceTree = "<group>"; };
+		7238052219C7636D004A931E /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		7238052319C7636D004A931E /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		7238052519C7636D004A931E /* Recipient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipient.h; sourceTree = "<group>"; };
+		7238052619C7636D004A931E /* Recipient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipient.m; sourceTree = "<group>"; };
+		7238052819C76478004A931E /* Message+ConvenienceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Message+ConvenienceMethods.h"; sourceTree = "<group>"; };
+		7238052919C76478004A931E /* Message+ConvenienceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Message+ConvenienceMethods.m"; sourceTree = "<group>"; };
 		D879F335195E028000FC5285 /* slapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D879F338195E028000FC5285 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D879F33A195E028000FC5285 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,8 +72,6 @@
 		D879F376195E030C00FC5285 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D879F378195E032D00FC5285 /* FISTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISTableViewController.h; sourceTree = "<group>"; };
 		D879F379195E032D00FC5285 /* FISTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISTableViewController.m; sourceTree = "<group>"; };
-		D879F3A71961F1E800FC5285 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
-		D879F3A81961F1E800FC5285 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,14 +133,20 @@
 		D879F33E195E028000FC5285 /* slapChat */ = {
 			isa = PBXGroup;
 			children = (
+				7238052819C76478004A931E /* Message+ConvenienceMethods.h */,
+				7238052919C76478004A931E /* Message+ConvenienceMethods.m */,
+				7238052219C7636D004A931E /* Message.h */,
+				7238052319C7636D004A931E /* Message.m */,
+				7238052519C7636D004A931E /* Recipient.h */,
+				7238052619C7636D004A931E /* Recipient.m */,
 				D879F373195E02C000FC5285 /* slapChat.xcdatamodeld */,
-				D879F3A71961F1E800FC5285 /* Message.h */,
-				D879F3A81961F1E800FC5285 /* Message.m */,
 				D879F370195E02B400FC5285 /* FISDataStore.h */,
 				D879F371195E02B400FC5285 /* FISDataStore.m */,
 				D879F347195E028000FC5285 /* FISAppDelegate.h */,
 				D879F348195E028000FC5285 /* FISAppDelegate.m */,
 				D879F34A195E028000FC5285 /* Main.storyboard */,
+				7238051F19C76081004A931E /* FISRecipientTableViewController.h */,
+				7238052019C76081004A931E /* FISRecipientTableViewController.m */,
 				D879F378195E032D00FC5285 /* FISTableViewController.h */,
 				D879F379195E032D00FC5285 /* FISTableViewController.m */,
 				D879F350195E028000FC5285 /* Images.xcassets */,
@@ -268,10 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D879F345195E028000FC5285 /* main.m in Sources */,
-				D879F3A91961F1E800FC5285 /* Message.m in Sources */,
+				7238052719C7636D004A931E /* Recipient.m in Sources */,
 				D879F375195E02C000FC5285 /* slapChat.xcdatamodeld in Sources */,
 				D879F372195E02B400FC5285 /* FISDataStore.m in Sources */,
+				7238052419C7636D004A931E /* Message.m in Sources */,
+				7238052A19C76478004A931E /* Message+ConvenienceMethods.m in Sources */,
 				D879F349195E028000FC5285 /* FISAppDelegate.m in Sources */,
+				7238052119C76081004A931E /* FISRecipientTableViewController.m in Sources */,
 				D879F37A195E032D00FC5285 /* FISTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

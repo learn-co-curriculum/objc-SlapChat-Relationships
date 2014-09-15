@@ -7,7 +7,8 @@
 //
 
 #import "FISDataStore.h"
-#import "Message.h"
+#import "Message+ConvenienceMethods.h"
+#import "Recipient.h"
 
 @implementation FISDataStore
 @synthesize managedObjectContext = _managedObjectContext;
@@ -75,6 +76,15 @@
 
 - (void)generateTestData
 {
+    Recipient *recipient1 = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+    recipient1.name = @"Recipient 1";
+    
+    Recipient *recipient2 = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+    recipient2.name = @"Recipient 2";
+    
+    Recipient *recipient3 = [NSEntityDescription insertNewObjectForEntityForName:@"Recipient" inManagedObjectContext:self.managedObjectContext];
+    recipient3.name = @"Recipient 3";
+    
     Message *messageOne = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
     
     messageOne.content = @"Message 1";
@@ -85,24 +95,38 @@
     messageTwo.createdAt = [NSDate date];
     
     Message *messageThree = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
-    
     messageThree.content = @"Message 3";
     messageThree.createdAt = [NSDate date];
 
+    Message *messageFour = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+    messageFour.content = @"Message 4";
+    messageFour.createdAt = [NSDate date];
+    
+    Message *messageFive = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:self.managedObjectContext];
+    messageFive.content = @"Message 5";
+    messageFive.createdAt = [NSDate date];
+    
+    [recipient1 addMessagesObject:messageOne];
+    [recipient1 addMessagesObject:messageTwo];
+    
+    [recipient2 addMessages:[NSSet setWithObjects:messageThree,messageFive, nil]];
+    
+    [recipient3 addMessagesObject:messageFour];
+    
     [self save];
     [self fetchData];
 }
 
 - (void)fetchData
 {
-    NSFetchRequest *messagesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
+    NSFetchRequest *recipientRequest = [NSFetchRequest fetchRequestWithEntityName:@"Recipient"];
 
-    NSSortDescriptor *createdAtSorter = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES];
-    messagesRequest.sortDescriptors = @[createdAtSorter];
+    NSSortDescriptor *createdAtSorter = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    recipientRequest.sortDescriptors = @[createdAtSorter];
 
-    self.messages = [self.managedObjectContext executeFetchRequest:messagesRequest error:nil];
+    self.recipients = [self.managedObjectContext executeFetchRequest:recipientRequest error:nil];
 
-    if ([self.messages count]==0) {
+    if ([self.recipients count]==0) {
         [self generateTestData];
     }
 }

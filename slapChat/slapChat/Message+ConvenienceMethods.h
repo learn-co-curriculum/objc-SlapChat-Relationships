@@ -1,5 +1,5 @@
 //
-//  Message.m
+//  Message+ConvenienceMethods.h
 //  slapChat
 //
 //  Created by Chris Gonzales on 9/15/14.
@@ -8,11 +8,8 @@
 
 #import "Message.h"
 
+@interface Message (ConvenienceMethods)
 
-@implementation Message
-
-@dynamic content;
-@dynamic createdAt;
-@dynamic recipient;
++(instancetype)messageWithContext:(NSManagedObjectContext *)context;
 
 @end

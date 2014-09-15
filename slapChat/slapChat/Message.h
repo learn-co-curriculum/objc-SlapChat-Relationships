@@ -2,7 +2,7 @@
 //  Message.h
 //  slapChat
 //
-//  Created by Joe Burgess on 6/30/14.
+//  Created by Chris Gonzales on 9/15/14.
 //  Copyright (c) 2014 Joe Burgess. All rights reserved.
 //
 
@@ -14,6 +14,6 @@
 
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSManagedObject *recipient;
 
-+(instancetype) messageWithContext:(NSManagedObjectContext *)context;
 @end
