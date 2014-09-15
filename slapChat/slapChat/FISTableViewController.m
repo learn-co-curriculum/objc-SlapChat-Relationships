@@ -11,20 +11,20 @@
 
 @interface FISTableViewController ()
 
+@property (strong, nonatomic) IBOutlet UITableView *messageSearchBar;
+@property (strong, nonatomic) NSMutableArray *filteredMessages;
 @end
 
 @implementation FISTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+
+-(NSArray *)filteredMessages
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (!_filteredMessages) {
+        _filteredMessages = [[NSMutableArray alloc] init];
     }
-    return self;
+    return _filteredMessages;
 }
-
-
 
 - (void)viewDidLoad
 {
@@ -55,15 +55,28 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        return self.filteredMessages.count;
+    }
     return [self.messages count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basiccell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"basiccell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if ( cell == nil ) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-    Message *eachMessage = self.messages[indexPath.row];
+    Message *eachMessage;
+    
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        eachMessage = self.filteredMessages[indexPath.row];
+    } else {
+        eachMessage = self.messages[indexPath.row];
+    }
     
     cell.textLabel.text = eachMessage.content;
     
@@ -72,6 +85,21 @@
     return cell;
 }
 
+#pragma mark Content Filtering
+-(void)filterContentForSearchText:(NSString*)searchText {
+    [self.filteredMessages removeAllObjects];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.content contains[c] %@",searchText];
+    self.filteredMessages = [NSMutableArray arrayWithArray:[self.messages filteredArrayUsingPredicate:predicate]];
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString];
+    
+    return YES;
+}
 
 /*
 // Override to support conditional editing of the table view.

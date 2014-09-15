@@ -10,7 +10,7 @@
 #import "FISDataStore.h"
 #import "Recipient.h"
 
-@interface FISTableViewController : UITableViewController
+@interface FISTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) NSArray *messages;
 
