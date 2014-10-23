@@ -30,7 +30,6 @@
 {
     [super viewDidLoad];
 
-    [self.storyboard instantiateViewControllerWithIdentifier:<#(NSString *)#>]
     self.store = [FISDataStore sharedDataStore];
 
 }
