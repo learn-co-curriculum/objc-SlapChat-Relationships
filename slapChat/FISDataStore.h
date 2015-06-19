@@ -17,7 +17,7 @@
 
 + (instancetype) sharedDataStore;
 
-- (void) save;
+- (void) saveContext;
 - (void) generateTestData;
 - (void) fetchData;
 - (Message *) createMessage;
