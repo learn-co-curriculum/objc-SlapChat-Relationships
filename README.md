@@ -1,7 +1,4 @@
----
-  tags: tutorial, intermediate, CoreData, Relationships
-  languages: objc
----
+
 
 Core Data SlapChat Relationships
 =========
