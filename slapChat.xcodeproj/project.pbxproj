@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BBECA2E1BD566EB00FFFAE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBECA2D1BD566EB00FFFAE2 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		7238052119C76081004A931E /* FISRecipientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052019C76081004A931E /* FISRecipientTableViewController.m */; };
 		7238052419C7636D004A931E /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052319C7636D004A931E /* Message.m */; };
 		7238052719C7636D004A931E /* Recipient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7238052619C7636D004A931E /* Recipient.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5BBECA2D1BD566EB00FFFAE2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7238051F19C76081004A931E /* FISRecipientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISRecipientTableViewController.h; sourceTree = "<group>"; };
 		7238052019C76081004A931E /* FISRecipientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISRecipientTableViewController.m; sourceTree = "<group>"; };
 		7238052219C7636D004A931E /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		D879F32C195E028000FC5285 = {
 			isa = PBXGroup;
 			children = (
+				5BBECA2D1BD566EB00FFFAE2 /* Launch Screen.storyboard */,
 				D879F33E195E028000FC5285 /* slapChat */,
 				D879F35D195E028000FC5285 /* slapChatTests */,
 				D879F337195E028000FC5285 /* Frameworks */,
@@ -263,6 +266,7 @@
 			files = (
 				D879F351195E028000FC5285 /* Images.xcassets in Resources */,
 				D879F343195E028000FC5285 /* InfoPlist.strings in Resources */,
+				5BBECA2E1BD566EB00FFFAE2 /* Launch Screen.storyboard in Resources */,
 				D879F34C195E028000FC5285 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -404,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -414,7 +418,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "slapChat/slapChat-Prefix.pch";
 				INFOPLIST_FILE = "slapChat/slapChat-Info.plist";
@@ -427,7 +430,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "slapChat/slapChat-Prefix.pch";
 				INFOPLIST_FILE = "slapChat/slapChat-Info.plist";
