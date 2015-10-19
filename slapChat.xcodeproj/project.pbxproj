@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BBECA2C1BD5659900FFFAE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBECA2B1BD5659900FFFAE2 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		D879F339195E028000FC5285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F338195E028000FC5285 /* Foundation.framework */; };
 		D879F33B195E028000FC5285 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33A195E028000FC5285 /* CoreGraphics.framework */; };
 		D879F33D195E028000FC5285 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D879F33C195E028000FC5285 /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5BBECA2B1BD5659900FFFAE2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D879F335195E028000FC5285 /* slapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D879F338195E028000FC5285 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D879F33A195E028000FC5285 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 		D879F32C195E028000FC5285 = {
 			isa = PBXGroup;
 			children = (
+				5BBECA2B1BD5659900FFFAE2 /* Launch Screen.storyboard */,
 				D879F33E195E028000FC5285 /* slapChat */,
 				D879F35D195E028000FC5285 /* slapChatTests */,
 				D879F337195E028000FC5285 /* Frameworks */,
@@ -248,6 +251,7 @@
 			files = (
 				D879F351195E028000FC5285 /* Images.xcassets in Resources */,
 				D879F343195E028000FC5285 /* InfoPlist.strings in Resources */,
+				5BBECA2C1BD5659900FFFAE2 /* Launch Screen.storyboard in Resources */,
 				D879F34C195E028000FC5285 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -386,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -396,10 +400,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "slapChat/slapChat-Prefix.pch";
 				INFOPLIST_FILE = "slapChat/slapChat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,10 +413,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "slapChat/slapChat-Prefix.pch";
 				INFOPLIST_FILE = "slapChat/slapChat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
