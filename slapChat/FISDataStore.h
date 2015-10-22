@@ -11,7 +11,6 @@
 
 @interface FISDataStore : NSObject
 
-
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSArray *messages;
 
@@ -20,5 +19,5 @@
 - (void) saveContext;
 - (void) generateTestData;
 - (void) fetchData;
-- (Message *) createMessage;
+
 @end

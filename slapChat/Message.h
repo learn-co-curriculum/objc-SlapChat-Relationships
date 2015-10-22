@@ -2,18 +2,21 @@
 //  Message.h
 //  slapChat
 //
-//  Created by Joe Burgess on 6/30/14.
-//  Copyright (c) 2014 Joe Burgess. All rights reserved.
+//  Created by Timothy Clem on 10/22/15.
+//  Copyright © 2015 Joe Burgess. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface Message : NSManagedObject
 
-@property (nonatomic, retain) NSString * content;
-@property (nonatomic, retain) NSDate * createdAt;
+// Insert code here to declare functionality of your managed object subclass
 
-+(instancetype) messageWithContext:(NSManagedObjectContext *)context;
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "Message+CoreDataProperties.h"
