@@ -27,4 +27,4 @@ Core Data SlapChat Relationships
 You may come across a time in your life that you want to `alloc`/`init` a `UIViewController` that was created in a storyboard. As you know, you are not allowed to `alloc`/`init` a `UIViewController` that is stored in a storyboard. The way to get around this is to ask the storyboard to instantiate the `UIViewController` for us. The first step is to give our view controller in the storyboard an identifier. Do this the same way you give identifiers to segues. Then call `[self.storyboard instantiateViewControllerWithIdentifier:<STORYBOARD ID>]`. That should help you out :)
 
 
-<a href='https://learn.co/lessons/objc-SlapChat-Relationships' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/objc-SlapChat-Relationships' title='Core Data SlapChat Relationships'>Core Data SlapChat Relationships</a> on Learn.co and start learning to code for free.</p>
